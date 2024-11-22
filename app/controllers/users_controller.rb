@@ -1,5 +1,3 @@
-
-
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
@@ -24,11 +22,11 @@ class UsersController < ApplicationController
     net_balances = Hash.new(0)
 
     amounts_owed_to_you.each do |user_id, amount|
-      net_balances[user_id] = net_balances[user_id]+amount
+      net_balances[user_id] = net_balances[user_id] + amount
     end
 
     debts.each do |user_id, amount|
-      net_balances[user_id] =net_balances[user_id]- amount
+      net_balances[user_id] = net_balances[user_id] - amount
     end
 
     net_balances.reject { |_, net_amount| net_amount.zero? }

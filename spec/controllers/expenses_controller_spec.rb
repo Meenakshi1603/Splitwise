@@ -63,7 +63,7 @@ RSpec.describe ExpensesController, type: :controller do
       end
 
       it 'creates ExpenseSplits with the correct amount and user' do
-        group.users << create(:user) 
+        group.users << create(:user)
         split_amount = 50 / group.users.count
 
         post :create, params: valid_params

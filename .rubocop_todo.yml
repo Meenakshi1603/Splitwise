@@ -27,9 +27,6 @@ Bundler/OrderedGems:
 # SupportedStylesAlignWith: either, start_of_block, start_of_line
 Layout/BlockAlignment:
   Exclude:
-    - 'spec/controllers/expenses_controller_spec.rb'
-    - 'spec/models/user_spec.rb'
-    - 'spec/rails_helper.rb'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
@@ -37,25 +34,17 @@ Layout/BlockAlignment:
 # SupportedStylesAlignWith: start_of_line, def
 Layout/DefEndAlignment:
   Exclude:
-    - 'app/controllers/groups_controller.rb'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: EmptyLineBetweenMethodDefs, EmptyLineBetweenClassDefs, EmptyLineBetweenModuleDefs, DefLikeMacros, AllowAdjacentOneLineDefs, NumberOfEmptyLines.
 Layout/EmptyLineBetweenDefs:
   Exclude:
-    - 'app/controllers/groups_controller.rb'
 
 # Offense count: 14
 # This cop supports safe autocorrection (--autocorrect).
 Layout/EmptyLines:
   Exclude:
-    - 'app/controllers/groups_controller.rb'
-    - 'app/models/expense.rb'
-    - 'app/models/expense_split.rb'
-    - 'config/routes.rb'
-    - 'spec/models/expense_spec.rb'
-    - 'spec/models/expense_split_spec.rb'
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
@@ -63,8 +52,6 @@ Layout/EmptyLines:
 # SupportedStyles: around, only_before
 Layout/EmptyLinesAroundAccessModifier:
   Exclude:
-    - 'app/controllers/groups_controller.rb'
-    - 'app/models/expense.rb'
 
 # Offense count: 6
 # This cop supports safe autocorrection (--autocorrect).
@@ -72,12 +59,6 @@ Layout/EmptyLinesAroundAccessModifier:
 # SupportedStyles: empty_lines, no_empty_lines
 Layout/EmptyLinesAroundBlockBody:
   Exclude:
-    - 'config/routes.rb'
-    - 'spec/models/expense_spec.rb'
-    - 'spec/models/group_spec.rb'
-    - 'spec/models/membership_spec.rb'
-    - 'spec/models/user_spec.rb'
-    - 'spec/rails_helper.rb'
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
@@ -85,8 +66,6 @@ Layout/EmptyLinesAroundBlockBody:
 # SupportedStyles: empty_lines, empty_lines_except_namespace, empty_lines_special, no_empty_lines, beginning_only, ending_only
 Layout/EmptyLinesAroundClassBody:
   Exclude:
-    - 'app/models/expense.rb'
-    - 'app/models/group.rb'
 
 # Offense count: 23
 # This cop supports safe autocorrection (--autocorrect).
@@ -94,13 +73,6 @@ Layout/EmptyLinesAroundClassBody:
 # SupportedStyles: normal, indented_internal_methods
 Layout/IndentationConsistency:
   Exclude:
-    - 'app/controllers/groups_controller.rb'
-    - 'spec/controllers/expenses_controller_spec.rb'
-    - 'spec/models/expense_spec.rb'
-    - 'spec/models/expense_split_spec.rb'
-    - 'spec/models/group_spec.rb'
-    - 'spec/models/membership_spec.rb'
-    - 'spec/rails_helper.rb'
 
 # Offense count: 5
 # This cop supports safe autocorrection (--autocorrect).
@@ -108,53 +80,34 @@ Layout/IndentationConsistency:
 # SupportedStyles: spaces, tabs
 Layout/IndentationStyle:
   Exclude:
-    - 'spec/factories/memberships.rb'
-    - 'spec/models/membership_spec.rb'
 
 # Offense count: 11
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: Width, AllowedPatterns.
 Layout/IndentationWidth:
   Exclude:
-    - 'app/controllers/groups_controller.rb'
-    - 'spec/controllers/expenses_controller_spec.rb'
-    - 'spec/controllers/home_controller_spec.rb'
-    - 'spec/factories/memberships.rb'
-    - 'spec/models/expense_split_spec.rb'
-    - 'spec/models/membership_spec.rb'
-    - 'spec/rails_helper.rb'
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: AllowDoxygenCommentStyle, AllowGemfileRubyComment, AllowRBSInlineAnnotation, AllowSteepAnnotation.
 Layout/LeadingCommentSpace:
   Exclude:
-    - 'spec/controllers/expenses_controller_spec.rb'
-    - 'spec/factories/expenses.rb'
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
 Layout/LeadingEmptyLines:
   Exclude:
-    - 'app/controllers/groups_controller.rb'
-    - 'app/controllers/users_controller.rb'
 
 # Offense count: 5
 # This cop supports safe autocorrection (--autocorrect).
 Layout/SpaceAfterColon:
   Exclude:
-    - 'spec/controllers/expenses_controller_spec.rb'
 
 # Offense count: 10
 # This cop supports safe autocorrection (--autocorrect).
 Layout/SpaceAfterComma:
   Exclude:
     - 'Gemfile'
-    - 'app/models/expense.rb'
-    - 'app/models/expense_split.rb'
-    - 'app/models/group.rb'
-    - 'spec/controllers/expenses_controller_spec.rb'
-    - 'spec/models/user_spec.rb'
 
 # Offense count: 5
 # This cop supports safe autocorrection (--autocorrect).
@@ -163,9 +116,6 @@ Layout/SpaceAfterComma:
 # SupportedStylesForRationalLiterals: space, no_space
 Layout/SpaceAroundOperators:
   Exclude:
-    - 'app/controllers/users_controller.rb'
-    - 'app/models/expense.rb'
-    - 'spec/models/user_spec.rb'
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
@@ -174,21 +124,17 @@ Layout/SpaceAroundOperators:
 # SupportedStylesForEmptyBraces: space, no_space
 Layout/SpaceBeforeBlockBraces:
   Exclude:
-    - 'app/models/expense_split.rb'
 
 # Offense count: 6
 # This cop supports safe autocorrection (--autocorrect).
 Layout/SpaceBeforeComma:
   Exclude:
     - 'Gemfile'
-    - 'app/models/group.rb'
-    - 'spec/controllers/expenses_controller_spec.rb'
 
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 Layout/SpaceBeforeComment:
   Exclude:
-    - 'spec/factories/expenses.rb'
 
 # Offense count: 2
 # This cop supports safe autocorrection (--autocorrect).
@@ -196,7 +142,6 @@ Layout/SpaceBeforeComment:
 # SupportedStyles: require_no_space, require_space
 Layout/SpaceInLambdaLiteral:
   Exclude:
-    - 'app/models/expense_split.rb'
 
 # Offense count: 48
 # This cop supports safe autocorrection (--autocorrect).
@@ -205,18 +150,6 @@ Layout/SpaceInLambdaLiteral:
 # SupportedStylesForEmptyBraces: space, no_space
 Layout/SpaceInsideBlockBraces:
   Exclude:
-    - 'app/models/expense_split.rb'
-    - 'spec/controllers/expenses_controller_spec.rb'
-    - 'spec/controllers/groups_controller_spec.rb'
-    - 'spec/controllers/users_controller_spec.rb'
-    - 'spec/factories/expense_splits.rb'
-    - 'spec/factories/expenses.rb'
-    - 'spec/factories/users.rb'
-    - 'spec/models/expense_spec.rb'
-    - 'spec/models/expense_split_spec.rb'
-    - 'spec/models/group_spec.rb'
-    - 'spec/models/membership_spec.rb'
-    - 'spec/models/user_spec.rb'
 
 # Offense count: 14
 # This cop supports safe autocorrection (--autocorrect).
@@ -225,9 +158,6 @@ Layout/SpaceInsideBlockBraces:
 # SupportedStylesForEmptyBraces: space, no_space
 Layout/SpaceInsideHashLiteralBraces:
   Exclude:
-    - 'app/models/expense.rb'
-    - 'app/models/group.rb'
-    - 'spec/controllers/expenses_controller_spec.rb'
 
 # Offense count: 14
 # This cop supports safe autocorrection (--autocorrect).
@@ -236,40 +166,17 @@ Layout/SpaceInsideHashLiteralBraces:
 Layout/TrailingEmptyLines:
   Exclude:
     - 'Gemfile'
-    - 'spec/controllers/expenses_controller_spec.rb'
-    - 'spec/controllers/groups_controller_spec.rb'
-    - 'spec/controllers/home_controller_spec.rb'
-    - 'spec/controllers/users_controller_spec.rb'
-    - 'spec/factories/expense_splits.rb'
-    - 'spec/factories/groups.rb'
-    - 'spec/factories/memberships.rb'
-    - 'spec/factories/users.rb'
-    - 'spec/models/expense_spec.rb'
-    - 'spec/models/expense_split_spec.rb'
-    - 'spec/models/group_spec.rb'
-    - 'spec/models/membership_spec.rb'
-    - 'spec/models/user_spec.rb'
 
 # Offense count: 21
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: AllowInHeredoc.
 Layout/TrailingWhitespace:
   Exclude:
-    - 'app/models/expense.rb'
-    - 'spec/controllers/expenses_controller_spec.rb'
-    - 'spec/controllers/users_controller_spec.rb'
-    - 'spec/factories/expense_splits.rb'
-    - 'spec/models/expense_spec.rb'
-    - 'spec/models/expense_split_spec.rb'
-    - 'spec/models/group_spec.rb'
 
 # Offense count: 6
 # This cop supports safe autocorrection (--autocorrect).
 Lint/ParenthesesAsGroupedExpression:
   Exclude:
-    - 'spec/models/expense_spec.rb'
-    - 'spec/models/group_spec.rb'
-    - 'spec/models/user_spec.rb'
 
 # Offense count: 1
 Lint/ShadowingOuterLocalVariable:

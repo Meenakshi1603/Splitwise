@@ -9,6 +9,4 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'part_of', to: 'groups#part_of'
   get 'profile', to: 'users#profile', as: 'user_profile'
-
-
 end

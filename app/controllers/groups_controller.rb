@@ -1,5 +1,3 @@
-
-
 class GroupsController < ApplicationController
   before_action :authenticate_user!
 
@@ -31,21 +29,16 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-     @group = Group.find(params[:id])
+    @group = Group.find(params[:id])
     @group.destroy
     redirect_to groups_path, notice: 'Group  deleted.'
   end
 
-
-def part_of
+  def part_of
     @groups = current_user.group_memberships
   end
+
   private
-
-
-
-
-
 
   def group_params
     params.require(:group).permit(:name, user_ids: [])
