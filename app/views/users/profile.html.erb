@@ -1,0 +1,33 @@
+<h1>Profile Overview</h1>
+
+<h2>Amounts Owed to You</h2>
+<% if @amounts_owed_to_you.present? %>
+  <% @amounts_owed_to_you.each do |user_id, amount| %>
+    <p><%= User.find(user_id).name %> owes you <%= number_to_currency(amount, unit: "INR") %></p>
+  <% end %>
+<% else %>
+  <p>No one owes you any amount.</p>
+<% end %>
+
+<h2>Your Debts</h2>
+<% if @debts.present? %>
+  <% @debts.each do |user_id, amount| %>
+    <p>You owe <%= User.find(user_id).name %> <%= number_to_currency(amount.abs, unit: "INR") %></p>
+  <% end %>
+<% else %>
+  <p>You have no debts.</p>
+<% end %>
+
+<h2>Net Balances</h2>
+<% if @net_balances.present? %>
+  <% @net_balances.each do |user_id, net_amount| %>
+    <% user_name = User.find(user_id).name %>
+    <% if net_amount > 0 %>
+      <p><%= user_name %> owes you <%= number_to_currency(net_amount, unit: "INR") %></p>
+    <% else %>
+      <p>You owe <%= user_name %> <%= number_to_currency(net_amount.abs, unit: "INR") %></p>
+    <% end %>
+  <% end %>
+<% else %>
+  <p>No net balances to display.</p>
+<% end %>

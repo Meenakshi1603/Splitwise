@@ -1,0 +1,77 @@
+<div class="container mt-5">
+  <h1 class="display-6 text-center text-primary mb-4">Expenses for <%= @group.name %></h1>
+
+  <!-- Expenses Table -->
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="table-primary">
+        <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Actions</th>
+          <th>Split Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @expenses.each do |expense| %>
+          <tr>
+            <td><%= expense.name %></td>
+            <td><%= number_to_currency(expense.amount, unit: "INR") %></td>
+            <td><%= expense.date%></td>
+            <td>
+              <%= link_to 'Delete', group_expense_path(@group, expense), method: :delete, data: { confirm: 'Are you sure you want to delete this expense?' }, class: "btn btn-sm btn-danger" %>
+            </td>
+            <td>
+              <ul class="list-unstyled">
+                <% expense.expense_splits.each do |split| %>
+                  <li><strong><%= split.user.name %></strong>: <%= number_to_currency(split.amount, unit: "INR") %></li>
+                <% end %>
+              </ul>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="d-flex justify-content-between mt-3">
+    <%= link_to 'Add Expense', new_group_expense_path(@group), class: "btn btn-primary" %>
+    <%= link_to 'Back to Groups', groups_path, class: "btn btn-secondary" %>
+  </div>
+
+  <hr class="my-5">
+
+  <!-- Filter Form -->
+  <h1 class="display-6 text-center text-primary mb-4">Filter Expenses</h1>
+
+  <%= form_with(url: group_expenses_path(@group), method: :get, local: true, class: "row g-3 mb-5") do %>
+    <div class="col-md-4">
+      <%= label_tag :search, "Search by Name:", class: "form-label" %>
+      <%= text_field_tag :search, params[:search], class: "form-control" %>
+    </div>
+    <div class="col-md-4">
+      <%= label_tag :date, "Filter by Date:", class: "form-label" %>
+      <%= date_field_tag :date, params[:date], class: "form-control" %>
+    </div>
+    <div class="col-md-4">
+      <%= label_tag :amount, "Filter by Amount:", class: "form-label" %>
+      <%= number_field_tag :amount, params[:amount], class: "form-control" %>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+      <%= submit_tag "Filter", class: "btn btn-success" %>
+    </div>
+  <% end %>
+
+  <!-- Filtered Expenses List -->
+  <ul class="list-group mt-4">
+    <% @expenses.each do |expense| %>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong><%= expense.name %></strong> - Amount: <%= number_to_currency(expense.amount, unit: "$") %> - Date: <%= expense.date %>
+          <br><small class="text-muted">Group: <%= expense.group.name %></small>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

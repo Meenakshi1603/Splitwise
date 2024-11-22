@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <h1 class="display-4 text-center mb-4">Create a New Group</h1>
+
+  <%= form_with model: @group do |form| %>
+    <div class="mb-3">
+      <%= form.label :name, class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :users, class: "form-label" %>
+      <div class="form-check">
+        <%= form.collection_check_boxes :user_ids, @users, :id, :name do |b| %>
+          <div class="form-check">
+            <%= b.check_box(class: "form-check-input") %>
+            <%= b.label(class: "form-check-label") %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <%= form.submit 'Create Group', class: "btn btn-primary" %>
+      <%= link_to 'Back', groups_path, class: "btn btn-secondary" %>
+    </div>
+  <% end %>
+</div>
+

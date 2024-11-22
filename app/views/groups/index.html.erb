@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <h1 class="display-4 text-center mb-4">Your Groups</h1>
+
+  <div class="mb-3">
+    <%= link_to 'Create new Group', new_group_path, class: "btn btn-primary" %>
+  </div>
+
+  <% if @groups.any? %>
+    <ul class="list-group">
+      <% @groups.each do |group| %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <strong><%= group.name%></strong> -
+            Members: <%= group.users.any? ? group.users.map { |user| user.name }.join(', '): 'No members' %>
+          </div>
+          <div>
+            <%= link_to 'View Expenses', group_expenses_path(group), class: "btn btn-outline-secondary btn-sm" %>
+            <%= link_to 'Add Expense', new_group_expense_path(group), class: "btn btn-success btn-sm" %>
+          </div>
+           <div>
+              <%= link_to 'Delete', group_path(group), method: :delete, data: { confirm: 'Are you sure you want to delete this group?' }, class: "btn btn-sm btn-danger" %>
+            </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="text-center">No groups created yet.</p>
+  <% end %>
+</div>

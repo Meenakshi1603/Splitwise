@@ -1,0 +1,10 @@
+<h1>Welcome, Here is the list of groups you are a part of</h1>
+  <ul class="list-group">
+    <% @groups.each do |group| %>
+      <li class="list-group-item">
+        <strong><%= group.name %></strong>
+      </li>
+    <% end %>
+  </ul>
+
+
